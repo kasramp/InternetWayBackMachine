@@ -19,6 +19,8 @@ $ cd build/deploy
 
 $ java -jar InternetWaybackMachine.jar MyURL
 
+For PHP source just copy and paste it in your Apache folder and done (More suitable for OpenShift).
+
 For more information contact,
 kasra@madadipouya.com 
 kasra_mp@live.com
