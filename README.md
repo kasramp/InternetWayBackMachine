@@ -1,6 +1,7 @@
-#InternetWayBackMachine
+InternetWayBackMachine
 =======================
-Auto Submit URLs to web.archive.org
+
+# Auto Submit URLs to web.archive.org
 
 The purpose of this application is to allow user to define a link and allow them to automatically submit to web.archive.org. 
 The main benefit of this application is that the user doesn't require to open a browser and do the submission manually each time.
@@ -21,8 +22,8 @@ To run the application :
 For PHP source just copy and paste it in your Apache folder and done (More suitable for OpenShift).
 
 For more information contact,
-kasra@madadipouya.com 
-kasra_mp@live.com
+* kasra@madadipouya.com 
+* kasra_mp@live.com
 
 License
 =======
@@ -37,5 +38,5 @@ GNU General Public License for more details.  <http://www.gnu.org/licenses/>
 
 Author(s):
 
-© 2015 Kasra Madadipouya <kasra@madadipouya.com>
+© 2015-2017 Kasra Madadipouya <kasra@madadipouya.com>
 
