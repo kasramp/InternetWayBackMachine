@@ -11,6 +11,7 @@ import org.springframework.shell.standard.ShellMethod;
 import org.springframework.shell.standard.ShellOption;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 @ShellCommandGroup("URL submission commands to 'http://archive.org/'")
@@ -38,7 +39,7 @@ public class SubmitCommand {
             "example, `save-batch '[\"https://google.com\", \"https://msn.com\"]'`", key = "save-batch")
     public void submitUrlBatch(@ShellOption String jsonUrls) {
         try {
-            internetArchiveService.submitBatch(List.of(objectMapper.readValue(jsonUrls, String[].class)));
+            internetArchiveService.submitBatch(Arrays.asList(objectMapper.readValue(jsonUrls, String[].class)));
         } catch (IOException deserializationException) {
             logger.error("Failed to parse user input", deserializationException);
             System.out.println("Failed to parse the input. Use the provided example structure!");

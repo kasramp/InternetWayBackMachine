@@ -18,7 +18,7 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
-import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
 
@@ -61,7 +61,7 @@ public class DefaultInternetArchiveService implements InternetArchiveService {
 
     @Override
     public void submitFile(String filePath) {
-        try (BufferedReader reader = Files.newBufferedReader(Path.of(filePath))) {
+        try (BufferedReader reader = Files.newBufferedReader(Paths.get(filePath))) {
             reader.lines().forEach(this::submit);
         } catch (IOException fileException) {
             logger.error("Failed to open {} file", filePath, fileException);
