@@ -12,10 +12,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.Optional;
 
@@ -46,7 +49,7 @@ public class DefaultInternetArchiveService implements InternetArchiveService {
                 }
             } catch (IOException e) {
                 logger.error("Cannot connect to archive.org", e);
-                System.out.println("Failed to connect to archive.org");
+                System.out.println(String.format("Failed to connect to archive.org for [%s]", url));
             }
         });
     }
@@ -54,6 +57,16 @@ public class DefaultInternetArchiveService implements InternetArchiveService {
     @Override
     public void submitBatch(List<String> urls) {
         urls.forEach(this::submit);
+    }
+
+    @Override
+    public void submitFile(String filePath) {
+        try (BufferedReader reader = Files.newBufferedReader(Path.of(filePath))) {
+            reader.lines().forEach(this::submit);
+        } catch (IOException fileException) {
+            logger.error("Failed to open {} file", filePath, fileException);
+            System.out.println("Failed to open the file. Make sure it exists");
+        }
     }
 
     private Optional<URI> getUri(String url) {

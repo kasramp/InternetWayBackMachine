@@ -16,15 +16,18 @@ After that you should be able to interact with the app.
 
 To get started type `help`.
 
-At the moment only **two commands** are supported which are:
+At the moment only **three commands** are supported which are:
 
 - `save`: saves a URL. Examples: 
     
     - `save "https://google.com"`
-    - `save https://google.com`
+    - `save https://google.com` 
     
-- `save-batch`: saves a batch of URLs.
+- `save-batch`: saves a batch of URLs. Example,
     - `save-batch '["https://google.com", "https://yahoo.com"]`
+    
+- `save-file`: submits all URLs of the file. For sample file see [sample_file.txt](./assets/sample_file.txt). Example,
+    - `save-file /file/path Or file\\path`
     
 
 ## Important note

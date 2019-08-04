@@ -44,4 +44,10 @@ public class SubmitCommand {
             System.out.println("Failed to parse the input. Use the provided example structure!");
         }
     }
+
+    @ShellMethod(value = "saves URLs provided a given file, " +
+            "example, `save-file \"/home/User/Desktop/file.txt\"`", key = "save-file")
+    public void submitFile(@ShellOption String filePath) {
+        internetArchiveService.submitFile(filePath);
+    }
 }

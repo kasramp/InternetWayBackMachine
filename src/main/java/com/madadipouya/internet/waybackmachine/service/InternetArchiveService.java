@@ -15,4 +15,10 @@ public interface InternetArchiveService {
      * @param urls to submit
      */
     void submitBatch(List<String> urls);
+
+    /**
+     * Submits all the provided urls in a file to web.archive.org
+     * @param filePath where the file consists of urls stored
+     */
+    void submitFile(String filePath);
 }
