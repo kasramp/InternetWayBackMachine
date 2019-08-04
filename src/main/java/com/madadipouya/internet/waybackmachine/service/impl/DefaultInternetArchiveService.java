@@ -8,6 +8,8 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -26,6 +28,8 @@ public class DefaultInternetArchiveService implements InternetArchiveService {
 
     private static final String WEB_ARCHIVE_BASE_URL = "https://web.archive.org%s";
 
+    private static final Logger logger = LoggerFactory.getLogger(DefaultInternetArchiveService.class);
+
     @Override
     public void submit(String url) {
         getUri(url).ifPresent(uri -> {
@@ -41,6 +45,7 @@ public class DefaultInternetArchiveService implements InternetArchiveService {
                     System.out.println(String.format("Failed to submit the URL, got %s response. Try again", statusCode));
                 }
             } catch (IOException e) {
+                logger.error("Cannot connect to archive.org", e);
                 System.out.println("Failed to connect to archive.org");
             }
         });
@@ -55,6 +60,7 @@ public class DefaultInternetArchiveService implements InternetArchiveService {
         try {
             return Optional.of(UrlUtils.toUri(url));
         } catch (MalformedURLException | URISyntaxException badUrlException) {
+            logger.error("Invalid URL", badUrlException);
             System.out.println("Invalid URL is provided!");
             return Optional.empty();
         }
