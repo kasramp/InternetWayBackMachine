@@ -1,4 +1,4 @@
-# Internet Wayback Machine
+# Internet Wayback Machine [![Build Status](https://travis-ci.org/kasramp/InternetWayBackMachine.svg?branch=master)](https://travis-ci.org/kasramp/InternetWayBackMachine)
  
 This small utility enables you to submit as many URLs as you like to [https://archive.org](https://archive.org).
 
