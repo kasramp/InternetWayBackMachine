@@ -52,6 +52,13 @@
         </plugins>
     </build>
 
+    <licenses>
+        <license>
+            <name>The MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+        </license>
+    </licenses>
+
     <repositories>
         <repository>
             <id>spring-snapshots</id>
