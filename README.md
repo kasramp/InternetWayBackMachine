@@ -2,6 +2,8 @@
  
 This small utility enables you to submit as many URLs as you like to [https://archive.org](https://archive.org).
 
+![Banner](./assets/images/screenshot.png)
+
 ## How to use
 
 Download a Jar file from [release section](https://github.com/kasramp/InternetWayBackMachine/releases).
@@ -36,6 +38,14 @@ This is a revamped version (rewritten) of the classic Internet Wayback Machine.
 PHP supported is dropped. However, if you still want to access to the old code
 you can access to [classic-old](https://github.com/kasramp/InternetWayBackMachine/tree/classic-old) branch. That code is not maintained anymore though. 
 
+
+## Development
+
+Clone the repository and to run the project:
+
+```bash
+$ mvn spring-boot:run
+```
 
 ## License
 
