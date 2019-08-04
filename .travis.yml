@@ -3,7 +3,7 @@ sudo: false
 install: true
 
 jdk:
-  - oraclejdk11
+  - openjdk8
 install:
   - export TRAVIS_COMMIT_DESCRIPTION=`git log -n 1`
 script:
