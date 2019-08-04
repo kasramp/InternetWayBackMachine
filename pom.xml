@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.madadipouya.internet.waybackmachine</groupId>
     <artifactId>internet-way-back-machine</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.1</version>
     <packaging>jar</packaging>
     <name>Internet Wayback Machine</name>
     <url>http://blog.madadipouya.com</url>
