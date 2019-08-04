@@ -16,7 +16,7 @@ After that you should be able to interact with the app.
 
 To get started type `help`.
 
-At the moment only *two commands* are supported which are:
+At the moment only **two commands** are supported which are:
 
 - `save`: saves a URL. Examples: 
     
@@ -31,7 +31,7 @@ At the moment only *two commands* are supported which are:
 
 This is a revamped version (rewritten) of the classic Internet Wayback Machine. 
 PHP supported is dropped. However, if you still want to access to the old code
-you can access to [classic-old](https://github.com/kasramp/InternetWayBackMachine/tree/classic-old) branch. Keep in mind that code is not maintained anymore. 
+you can access to [classic-old](https://github.com/kasramp/InternetWayBackMachine/tree/classic-old) branch. That code is not maintained anymore though. 
 
 
 ## License
