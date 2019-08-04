@@ -29,12 +29,12 @@ public class SubmitCommand {
     }
 
 
-    @ShellMethod(value = "saves a URL, example `save \"https://google.com\"`", key = "save")
+    @ShellMethod(value = "Saves a URL, example `save \"https://google.com\"`", key = "save")
     public void submitUrl(@ShellOption String url) {
         internetArchiveService.submit(url);
     }
 
-    @ShellMethod(value = "saves a batch of URLs, " +
+    @ShellMethod(value = "Saves a batch of URLs, " +
             "example, `save-batch '[\"https://google.com\", \"https://msn.com\"]'`", key = "save-batch")
     public void submitUrlBatch(@ShellOption String jsonUrls) {
         try {
@@ -45,7 +45,7 @@ public class SubmitCommand {
         }
     }
 
-    @ShellMethod(value = "saves URLs provided a given file, " +
+    @ShellMethod(value = "Saves URLs provided a given file, " +
             "example, `save-file \"/home/User/Desktop/file.txt\"`", key = "save-file")
     public void submitFile(@ShellOption String filePath) {
         internetArchiveService.submitFile(filePath);
