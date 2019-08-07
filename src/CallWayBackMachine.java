@@ -10,7 +10,7 @@
  * GNU General Public License for more details.  <http://www.gnu.org/licenses/>
  *
  * Author(s):
- * © 2015 Kasra Madadipouya <kasra@madadipouya.com>
+ * © 2015-2019 Kasra Madadipouya <kasra@madadipouya.com>
  */
 public class CallWayBackMachine
 {
@@ -21,7 +21,6 @@ public class CallWayBackMachine
 			if(args.length < 1)
 			{
 				System.out.println("No URL provided!");
-				return;
 			}
 			else
 			{

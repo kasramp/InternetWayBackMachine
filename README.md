@@ -3,9 +3,9 @@ InternetWayBackMachine
 
 # Auto Submit URLs to web.archive.org
 
-The purpose of this application is to allow user to define a link and allow them to automatically submit to web.archive.org. 
-The main benefit of this application is that the user doesn't require to open a browser and do the submission manually each time.
-In addition to that, the appliation can be configured in Linux crontab and do the task of submission preidically.
+The purpose of this application is to allow user to to automatically submit a link to web.archive.org. 
+The main benefit of this application is that the user does not require to open a browser and do the submission manually each time.
+In addition to that, the application can be configured in Linux Crontab and do the task of submission periodically.
 You can get more information about Internet Wayback Machine from 
 
 http://www.web.archive.org
@@ -37,5 +37,5 @@ GNU General Public License for more details.  <http://www.gnu.org/licenses/>
 
 Author(s):
 
-© 2015-2018 Kasra Madadipouya <kasra@madadipouya.com>
+© 2015-2019 Kasra Madadipouya <kasra@madadipouya.com>
 

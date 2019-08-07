@@ -10,11 +10,12 @@
  * GNU General Public License for more details.  <http://www.gnu.org/licenses/>
  *
  * Author(s):
- * © 2015 Kasra Madadipouya <kasra@madadipouya.com>
+ * © 2015-2019 Kasra Madadipouya <kasra@madadipouya.com>
  */
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.URI;
 import java.net.URL;
 
 public class SubmitUrl
@@ -50,7 +51,11 @@ public class SubmitUrl
 				System.out.println("No URL provided!");
 				throw new Exception();
 			}
+
 			URL url = new URL(webArchiveUrl);
+
+			URI uri = new URI(url.getProtocol(), url.getUserInfo(), url.getHost(), url.getPort(), url.getPath(), url.getQuery(), url.getRef());
+			url = new URL(uri.toASCIIString());
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setRequestMethod("GET");
 			if(conn.getResponseCode() != 200)
@@ -68,14 +73,7 @@ public class SubmitUrl
 				//System.out.println(output);
 				cnt++;
 			}
-			if(cnt>1)
-			{
-				return true;
-			}
-			else 
-			{
-				return false;
-			}
+			return cnt>1;
 		}
 		catch(Exception ex)
 		{
