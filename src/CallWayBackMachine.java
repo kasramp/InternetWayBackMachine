@@ -1,3 +1,9 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.stream.Stream;
+
 /* 
  * This file is part of InternetWayBackMachine.
  * InternetWayBackMachine is free software; you can redistribute it and/or modify
@@ -22,7 +28,7 @@ public class CallWayBackMachine
 			{
 				System.out.println("No URL provided!");
 			}
-			else
+			else if(args.length == 1)
 			{
 				SubmitUrl su = new SubmitUrl(args[0]);
 				if(su.getResult())
@@ -34,10 +40,45 @@ public class CallWayBackMachine
 					System.out.println("Page submission failed :-( ");
 				}
 			}
+			else if(args.length > 1 && "-i".equals(args[0]))
+			{
+				processFile(args[1]);
+			}
+			else
+			{
+				System.out.println("Invalid arguments passed. \n"
+						+ "Usage:\n"
+						+ "* java -jar InternetWaybackMachine.jar [URL]\n"
+						+ "* java -jar InternetWaybackMachine.jar -i [Path to a file contains URLs]");
+			}
 		}
 		catch(Exception ex)
 		{
 			ex.printStackTrace();
 		}
+	}
+	
+	private static void processFile(String filePath)
+	{
+		try (BufferedReader reader = Files.newBufferedReader(Paths.get(filePath))) 
+		{
+			SubmitUrl submitUrl = new SubmitUrl();
+            reader.lines().forEach(url -> 
+			{
+				System.out.println(url);
+				if(submitUrl.getResult(url))
+				{
+					System.out.println("Your page submitted sucessfully!");
+				}
+				else
+				{
+					System.out.println("Page submission failed :-( ");
+				}
+			});
+        } 
+		catch (IOException fileException)
+		{
+            System.out.println("Failed to open the file. Make sure it exists");
+        }
 	}
 }
